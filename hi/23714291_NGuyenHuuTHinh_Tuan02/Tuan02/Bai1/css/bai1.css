@@ -1,0 +1,159 @@
+#container
+{
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    width: 80%;
+    height: 1000px;
+    border: 1px solid black;
+}
+
+#header
+{
+    height: 150px;
+}
+
+#header1
+{
+    text-shadow: 10px 10px 10px rgb(167, 21, 5);
+    text-transform: uppercase;
+    color: rgb(167, 21, 5);
+    text-align: center;
+}
+
+.menuliid
+{
+    text-align: center;
+    font-size: 30px;
+    list-style-type: none;
+    display: inline-block;
+    width: 200px;
+    border-right: 1px solid black;
+    margin-bottom: 10px;
+}
+
+#menuinput
+{
+    width: 150px;   
+}
+
+#menuulid
+{
+    background-color: salmon;
+    width: 100%;
+}
+
+#left
+{
+    height: 800px;
+    float: left;
+    width: 20%;
+}
+
+#left1 ul li
+{
+    list-style-type: none;
+    margin: 1px;
+    display: block;
+    border: none;
+    list-style: none;
+}
+
+.button
+{
+    width: 90%;
+    border-radius: 15px;
+    background-color: salmon;
+    border: none;
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+    text-align: left;
+}
+
+#left2 img
+{
+    width: 90%;
+    border-radius: 90%;
+    margin-top: 10px;
+    box-shadow: 10px 10px 10px red;
+}
+
+#mid
+{
+    height: 800px;
+    float: left;
+    width: 50%;
+}
+
+.tieude
+{
+    padding-right: 100px;
+    text-align: left;
+    margin-left: 200px;
+    width: 50%;
+    letter-spacing: 15px;
+    color:  rgb(167, 21, 5);
+    background-color: salmon;
+}
+
+#honey
+{
+    color: goldenrod;
+    text-transform: uppercase;
+}
+
+.v
+{
+    color: red;
+}
+
+.inputtext{
+    width: 250px;
+    height: 25px;
+    margin: 10px;
+}
+
+.inputcheck
+{
+    margin: 25px;
+}
+
+#right
+{
+    float: left;
+    width: 29.8%;
+    background-color: black;
+    height: 800px;
+}
+
+.imgedit
+{
+    width: 70%;
+    margin-left: 50px;
+}
+
+.noidung
+{
+    color: white;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.readmore
+{
+    color: red;
+}
+
+#footer
+{
+    width: 100%;
+    clear: both;
+    border: 1px solid black;
+    background-color: salmon;
+    height: 50px;
+    text-align: center;
+    padding-top: 10px;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30px;
+}

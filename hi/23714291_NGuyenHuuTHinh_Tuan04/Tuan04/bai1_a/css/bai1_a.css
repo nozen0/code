@@ -1,0 +1,11 @@
+*
+{
+    margin: 0 auto;
+}
+
+#container-fluid
+{
+    width: 80%;
+    height: 1000px;
+    border: 1px solid #000;
+}

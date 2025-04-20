@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="23714291-Nguyenhuuthinh-tuan7" content="Javascript_jQuery cơ bản">
+    <title>Bài 2</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <div class="container border">
+        <header>
+            <img src="../images/banner_car.jpg" alt="" class="w-100">
+        </header>
+        <section>
+            <div class="row">
+                <div class="col-3">
+                    <div>
+                        <form class="w-100 border border p-3">
+                            <div class="row">
+                                <div class="col-12" style="background-color: #d0d1c5;"><h3 style="text-align: center; color: blue;" >Bản tin thị trường</h3></div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-md-12" style="background-color: #d0d1c5;">
+                                    <h5 style="text-align: center; color: #6384d3;" >Vàng</h5>
+                                </div>
+                            </div>
+
+                            <div class="row mt-3">
+                                <div class="col-md-6">
+                                    <h6 style="text-align: center; color: #6384d3;" >Mua Vào</h6>
+                                </div>
+                                <div class="col-md-6">
+                                    <h6 style="text-align: center; color: #6384d3;" >Bán Ra</h6>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" name="gold_buy" id="gold_buy">
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" name="gold_sell" id="gold_sell">
+                                </div>
+                            </div>
+
+                            <div class="row mt-3">
+                                <div class="col-md-12" style="background-color: #d0d1c5;">
+                                    <h5 style="text-align: center; color: #6384d3;" >USD</h5>
+                                </div>
+                            </div>
+
+                            <div class="row mt-3">
+                                <div class="col-md-6">
+                                    <h6 style="text-align: center; color: #6384d3;" >Mua Vào</h6>
+                                </div>
+                                <div class="col-md-6">
+                                    <h6 style="text-align: center; color: #6384d3;" >Bán Ra</h6>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" name="usd_buy" id="usd_buy">
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" name="usd_sell" id="usd_sell">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div>
+                        <form class="w-100 border border p-3">
+                            <div class="row">
+                                <div class="col-12" style="background-color: #d0d1c5;"><h3 style="text-align: center; color: blue;" >Cập nhật giá cả thị trường</h3></div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-md-3">
+                                    <h5 >Mua vào</h5>
+                                </div>
+                                <div class="col-md-9">
+                                    <input type="text" name="buy" id="buy" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="row mt-3">
+                                <div class="col-md-3">
+                                    <h5 >Bán ra</h5>
+                                </div>
+                                <div class="col-md-9">
+                                    <input type="text" class="form-control" name="sell" id="sell">
+                                </div>
+                            </div>
+
+                            <div class="row mt-3">
+                                <div class="col-md-3">
+                                    <h5 >Loại xe</h5>
+                                </div>
+                                <div class="col-md-9">
+                                    <select name="" id="loaixe" class="form-control">
+                                        <option value="Chon loại xe">Chọn loại xe</option>
+                                        <option value="Toyota">Toyota</option>
+                                        <option value="KIA">KIA</option>
+                                        <option value="Ford">Ford</option>
+                                        <option value="Civic">Civic</option>
+                                        <option value="Ferrari">Ferrari</option>
+                                        <option value="Mercedes">Mercedes</option>
+                                    </select>
+
+                                </div>
+                            </div>
+
+                            <div class="row mt-3">
+                                <div class="col-md-3">
+
+                                </div>
+                                <div class="col-md-9">
+                                    <div class="form-check form-check-inline">
+                                        <input type="radio" name="gold" id="gold_radio"><span >Vàng</span>
+                                        <input type="radio" name="usd" id="usd_radio"><span >USD</span>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="row mt-3">
+                                <div class="col-md-3">
+
+                                </div>
+                                <div class="col-md-9">
+                                    <input type="button" value="Update" class="btn btn-light">
+                                    <input type="button" value="State" class="btn btn-light">
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div>
+                        <form class="w-100 border border p-3">
+                            <h3 style="text-align: center; color: blue; background-color: #d0d1c5;">
+                                Bảng báo giá
+                            </h3>
+                            <div class="row mt-3">
+                                <div class="col-md-12">
+                                    <textarea name="" id="mota" cols="50" rows="2" style="color: blue;"></textarea>
+                                </div>
+                                <div class="col-md-12 d-flex justify-content-center" style="background-color: #d0d1c5;">
+                                    <img src="#" alt="" id="anhxe">
+                                </div>
+                                <div class="col-md-12">
+                                    <p id="giaxe" style="color: green;"></p>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </div>
+    <script>
+        $(document).ready(function () {
+            const muaVaoInput = $('#buy');
+            const stateButton = $('input[value="State"]');
+            stateButton.prop('disabled', muaVaoInput.val() === '');
+
+            muaVaoInput.on('input', function () {
+                stateButton.prop('disabled', muaVaoInput.val() === '');
+            });
+
+            let xe1 = { Tenxe: "Toyota", hinhanh: "../images/car1.jpg", mota: 'tốt', dongia: 35000 };
+            let xe2 = { Tenxe: "KIA", hinhanh: "../images/car2.jpg", mota: 'Tốt', dongia: 15000 };
+            let xe3 = { Tenxe: "Ford", hinhanh: "../images/car3.jpg", mota: 'Tốt', dongia: 40000 };
+            let xe4 = { Tenxe: "Civic", hinhanh: "../images/car4.jpg", mota: 'Tốt', dongia: 32000 };
+            let xe5 = { Tenxe: "Ferrari", hinhanh: "../images/car5.jpg", mota: 'Tốt', dongia: 50000 };
+            let xe6 = { Tenxe: "Mercedes", hinhanh: "../images/car7.jpg", mota: 'Tốt', dongia: 45000 };
+            let dsxe = [xe1, xe2, xe3, xe4, xe5, xe6];
+            const selectLoaiXe = $('#loaixe');
+            const hinhAnhXe = $('#anhxe');
+            const giaXe = $('#giaxe');
+            const moTaXe = $('#mota');
+            selectLoaiXe.on('change', function () {
+                const selectedValue = selectLoaiXe.val();
+
+                const xeDaChon = dsxe.find(function (xe) {
+                    return xe.Tenxe === selectedValue;
+                });
+                if (xeDaChon) {
+                    hinhAnhXe.attr('src', xeDaChon.hinhanh);
+                    giaXe.text(`Giá: ${xeDaChon.dongia} $`);
+                    moTaXe.text(`Mô tả: ${xeDaChon.mota}`);
+                } else {
+                    hinhAnhXe.attr('src', ''); 
+                    giaXe.text('Giá: Không có thông tin');
+                    moTaXe.text('Mô tả: Không có thông tin');
+                }
+            });
+            const buyInput = $('#buy');
+            const sellInput = $('#sell');
+            const goldRadio = $('#gold_radio');
+            const usdRadio = $('#usd_radio');
+
+            const goldBuyInput = $('#gold_buy');
+            const goldSellInput = $('#gold_sell');
+            const usdBuyInput = $('#usd_buy');
+            const usdSellInput = $('#usd_sell');
+
+            const updateButton = $('input[value="Update"]');
+
+            updateButton.on('click', function () {
+                if (goldRadio.prop('checked')) {
+                    goldBuyInput.val(buyInput.val());
+                    goldSellInput.val(sellInput.val());
+                }
+                if (usdRadio.prop('checked')) {
+                    usdBuyInput.val(buyInput.val());
+                    usdSellInput.val(sellInput.val());
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

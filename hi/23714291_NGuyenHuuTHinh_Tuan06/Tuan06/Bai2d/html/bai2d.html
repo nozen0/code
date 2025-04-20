@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="23714291-Nguyenhuuthinh-Tuan06" content="Javascript cơ bản">
+    <title>bai2d</title>
+    <link rel="stylesheet" href="../css/bai2d.css">
+</head>
+
+<body>
+    <div id="container">
+        <h1>Form định dạng</h1>
+        <form 	id="form">
+            <table align="center" style="height: 150px;">
+                <tr>
+                    <td>Họ và tên: </td>
+                    <td>
+                        <input type="text" name="name" size="60px">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Chọn: 
+                    </td>
+                    <td>
+                        <input type="radio" id="background" name="style" value="Background">Background
+                        <input type="radio" id="font" name="style" value="Font">Font
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>Chọn màu: </td>
+                    <td>
+                        <select name="color" id="color">
+                            <option value="pink">Pink</option>
+                            <option value="yellow">Yellow</option>
+                            <option value="brown">Brown</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center">
+                        <button type="button" id="doimau">Đổi màu</button>
+                        <button type="button" id="cancel">Cancel</button>
+                    </td>
+                </tr>
+            </table>
+            <br>
+        </form>
+        <p id="text">
+            you can direct link the hyperlink with the file if you know the address but this is limited by the browser.
+            eg. if pdf reader is installed on the client then the pdf will not be downloaded instead it will be shown. A
+            good solution would be to have a seperate page for downloading files. just pass filename in querystring and
+            in the pageload event just outpit the file in response stream. This way you can use url say dwnld.aspx?
+            filename.txt
+        </p>
+        <script>
+            document.getElementById('doimau').addEventListener('click', function(){
+                var style = document.querySelector('input[name="style"]:checked').value;
+                var selectColor = document.getElementById('color').value;
+                var text = document.getElementById('text');
+                if(style === 'Background'){
+                    text.style.backgroundColor=selectColor;
+                }else if(style ==='Font'){
+                    text.style.color=selectColor;
+                }
+            });
+            document.getElementById('cancel').addEventListener('click', function(){
+                var text=document.getElementById('text');
+                text.style.color='';
+                text.style.backgroundColor='';
+            });
+        </script>
+    </div>
+</body>
+</html> 

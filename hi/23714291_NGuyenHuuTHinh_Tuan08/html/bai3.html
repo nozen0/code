@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="23714291-Nguyenhuuthinh-Tuan08" content="Javascript_jQuery_Form_Modal_Styles">
+    <title>Bai3</title>
+    <link rel="stylesheet" href="../bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script src="../bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        #bang2{
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" style="border: 1px solid blue;">
+        <form action="">
+            <table class="table table-borderless">
+                <tr>
+                    <td>Họ Tên:   </td>
+                    <td><input type="text" name="hoten" id="hoten"></td>
+                </tr>
+                <tr>
+                    <td>Lớp:   </td>
+                    <td>
+                        <select name="lop" id="lop">
+                            <option value="DHKTPM18B">DHKTPM18B</option>
+                            <option value="DHKTPM18A">DHKTPM18A</option>
+                        </select>
+                   </td>
+                </tr>
+                <tr>
+                    <td>Môn học:   </td>
+                    <td>
+                        <select name="monhoc" id="monhoc">
+                            <option value="OOPS">Lập trình hướng đối tượng</option>
+                            <option value="PTDL">Hệ thống công nghệ Web</option>
+                        </select>
+                   </td>
+                </tr>
+                <tr>
+                    <td>Loại:   </td>
+                    <td>
+                        <input type="radio" id="nut" name="nut">Lý thuyết
+                        <input type="radio" id="nut" name="nut">Thực hành
+                    </td>
+                </tr>
+            </table>
+        </form>    
+        <button class="btn btn-outline-dark" id="btn">Đăng ký</button>
+
+
+        <table id="bang2" class="table">
+            <tr>
+                <td><b>Họ Tên</b></td>
+                <td><b>Lớp</b></td>
+                <td><b>Môn học đăng kí</b></td>
+                <td><b>Loại</b></td>
+            </tr>
+            <tr>
+                <td>(1)</td>
+                <td>(2)</td>
+                <td>(3)</td>
+                <td>(4)</td>
+            </tr>
+        </table>
+    </div>
+    <script>
+       document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('btn').addEventListener('click', function(event) {
+        event.preventDefault(); 
+
+        var hoTen = document.getElementById('hoten').value;
+        var lop = document.getElementsByName('lop')[0].value;
+        var monHoc = document.getElementsByName('monhoc')[0].value;
+        var loai = document.querySelector('input[name="nut"]:checked').nextSibling.nodeValue.trim();
+
+        var table = document.getElementById('bang2');
+        var newRow = table.insertRow(-1); // Chèn hàng mới vào cuối bảng
+
+        var cell1 = newRow.insertCell(0);
+        var cell2 = newRow.insertCell(1);
+        var cell3 = newRow.insertCell(2);
+        var cell4 = newRow.insertCell(3);
+
+        cell1.innerHTML = hoTen;
+        cell2.innerHTML = lop;
+        cell3.innerHTML = monHoc;
+        cell4.innerHTML = loai;
+
+        if (table.rows.length > 2) {
+            var firstRowCells = table.rows[1].cells;
+            var firstCellContent = firstRowCells[0].innerHTML.trim();
+            if (firstCellContent === "(1)" && firstRowCells.length === 4) {
+                table.deleteRow(1);
+            }
+        }
+    });
+});
+
+    </script>
+</body>
+</html>

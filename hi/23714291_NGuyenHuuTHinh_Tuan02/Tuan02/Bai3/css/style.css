@@ -1,0 +1,138 @@
+*
+{
+    margin: 0 auto;
+}
+
+#container
+{
+    width: 80%;
+    height: auto;
+    border: 1px solid red; 
+    background-image: url(../images/background.jpg);
+}
+
+header{
+    width: 100%;
+    height: 100px;
+    padding: 50px;
+}
+
+.navlinkleft
+{
+    margin-left: 10px;
+    margin-right: 10px;
+    float:left;
+    width: 20%;
+    height: 800px;
+}
+
+#divnav
+{
+    text-align: left;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.navlinkleft ul li
+{
+    padding: 10px;
+    list-style-type: none;
+    font-size: 20px;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.nava
+{
+    text-decoration: none;
+}
+
+section
+{
+    width: 77%;
+    float: left;
+    height: 800px;
+    border-left: 5px solid green;
+}
+
+#h3seccart
+{
+    width: 100%;
+}
+
+#h3seccart h3 b
+{
+    letter-spacing: 15px;
+    padding-right: 300px;
+    margin-left: 50px;  
+    background-color: green;
+    padding-left: 70px;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 30px;
+}
+
+#textsecart
+{
+    width: 70%;
+    float: left;
+}
+
+#textsecart p{
+    color: white;
+    font-size: 15px;
+    padding-left: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#imgsecart
+{
+    width: 30%;
+    float: left;
+}
+
+#footertext
+{
+    clear: both;
+    width: 100%;
+}
+
+#footertext p{
+    color: white;
+    font-size: 15px;
+    padding-left: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#h4secart
+{
+    width: 100%;
+}
+
+#h4secart b{
+    background-color: green;
+    color: white;
+    padding-right: 300px;
+    margin-left: 50px;
+}
+
+#ulsecart li{
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+footer
+{
+    width: 100%;
+    clear: both;
+    border-top: 3px solid green;
+    height: 100px;
+}
+
+footer p
+{
+    color: white;
+    font-size: 15px;
+    text-align: center;
+    padding-top: 40px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}

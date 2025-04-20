@@ -1,0 +1,154 @@
+#container{
+    width: 80%;
+    height: 730px;
+    margin: auto;
+    border: 1px solid;
+}
+#head img{
+    width: 30%;
+    height: 90px;
+    margin-left: 68%;
+}
+#menu{
+    background-image: url(../IMAGE/back.jpg);
+    float: left;
+    width: 15.5%;
+    height: 610px;
+}
+#menu li{
+    text-align: left;
+}
+#menu ul{
+    list-style: none;
+    margin: 10px;
+    text-align: left;
+}
+
+#menu a{
+    font-size: medium;
+    text-decoration: none;
+}
+#section{
+    float: left;
+    width: 80%;
+    margin-left: 20px;
+}
+#section .ar1{
+    height: 150px;
+    width: 90%;
+}
+#section .ar1 h2{
+    color: orange;
+}
+#section .ar1 p{
+    color: crimson;
+    font-family: 'Times New Roman', Times, serif;
+    margin-left: 20px;
+    text-align: justify;
+}
+#section .ar2{
+    height: auto;
+    float: left;
+    width: 55%;
+
+
+}
+#section .ar2 h2{
+    color: orange;
+}
+#section .ar2 p{
+    color: crimson;
+    font-family: 'Times New Roman', Times, serif;
+    margin-left: 20px;
+}
+#section .ar3{
+    height: auto;
+    width: 40%;
+    float: left;
+    margin-left: 10px
+}
+#section .ar3 ul{
+    font-family: 'Times New Roman', Times, serif;
+    margin-right: 10px;
+    margin-left: 15px;
+    color: crimson;
+}
+#section .ar3 h2{
+    color: orange;
+}
+#section .ar3 .ar3_1{
+    border: 5px solid orange;
+    height: 250px;
+    background-color: blanchedalmond;
+    margin-left: 15px;
+}
+#section .ar4 p{
+    font-family: 'Times New Roman', Times, serif;
+    color: crimson;
+    margin-left: 10px;
+    text-align: justify;
+}
+#section .ar4{
+    width: 95%;
+    height: auto;
+    float: left;
+    margin-left: 20px;
+}
+#footer{
+    clear: both;
+    text-align: center;
+}
+#section2{
+    float: left;
+    width: 79%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#section2 img{
+    margin-right: 180px;
+}
+#section1 h2{
+    color: orange;
+    margin-left: 210px;
+}
+.ar5{
+    position: absolute;
+    border: 1px solid black;
+    box-shadow: 5px 5px 10px gray;
+    width: 150px;
+    height: 150px;
+    top: 15%;
+    left: 65%;
+    background-color: bisque;
+    padding: 5px;
+}
+.ar6{
+    position: absolute;
+    border: 1px solid;
+    box-shadow: 5px 5px 10px gray;
+    width: 150px;
+    height: 100px;
+    top: 50%;
+    left: 18%;
+    background-color: bisque;
+    padding: 5px;
+}
+.ar7{
+    position: absolute;
+    border: 1px solid;
+    box-shadow: 5px 5px 10px gray;
+    width: 150px;
+    height: 100px;
+    top: 70%;
+    left: 65%;
+    background-color: bisque;
+    padding: 5px;
+}
+#container1{
+    width: 80%;
+    margin: auto;
+    height: 790px;
+    border: 1px solid;
+    position: relative;
+}

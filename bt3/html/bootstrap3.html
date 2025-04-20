@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Đăng ký CCCD</title>
+  <link rel="stylesheet" href="../css/bootstrap.min.css" />
+  <script src="../js/jquery-3.3.1.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <style>
+    body {
+      padding: 20px;
+    }
+    .navbar {
+      margin-bottom: 20px;
+    }
+    .error {
+      color: red;
+      font-size: 0.9em;
+    }
+    table {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">HTCNW</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#" data-toggle="modal" data-target="#dangKyModal">Đăng ký</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Modal -->
+<div class="modal fade" id="dangKyModal" tabindex="-1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <form id="formDangKy">
+        <div class="modal-header">
+          <h5 class="modal-title">Đăng ký làm CCCD Sinh viên</h5>
+          <button type="button" class="close" data-dismiss="modal">
+            <span>&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="hoTen" class="form-label">Họ tên</label>
+            <input type="text" class="form-control" id="hoTen" required>
+            <div class="error" id="hoTenError"></div>
+          </div>
+          <div class="mb-3">
+            <label for="cmnd" class="form-label">Số CMND cũ</label>
+            <input type="text" class="form-control" id="cmnd" required>
+            <div class="error" id="cmndError"></div>
+          </div>
+          <div class="mb-3">
+            <label for="diaChi" class="form-label">Địa chỉ</label>
+            <input type="text" class="form-control" id="diaChi" required>
+            <div class="error" id="diaChiError"></div>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email (@iuh.edu.vn)</label>
+            <input type="email" class="form-control" id="email" required>
+            <div class="error" id="emailError"></div>
+          </div>
+          <div class="mb-3">
+            <label for="dienThoai" class="form-label">Điện thoại (0xx-xxx-xxxx)</label>
+            <input type="text" class="form-control" id="dienThoai" required>
+            <div class="error" id="dienThoaiError"></div>
+          </div>
+          <div class="mb-3">
+            <label for="anh" class="form-label">Chọn ảnh</label>
+            <input type="file" class="form-control" id="anh" accept="image/*" required>
+            <div class="error" id="anhError"></div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">Lưu</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Table -->
+<h4>DANH SÁCH ĐĂNG KÝ LÀM CĂN CƯỚC SINH VIÊN</h4>
+<table class="table table-bordered" id="bangDangKy">
+  <thead>
+    <tr>
+      <th>STT</th>
+      <th>Họ tên</th>
+      <th>CMND</th>
+      <th>Địa chỉ</th>
+      <th>Email</th>
+      <th>Điện thoại</th>
+      <th>Ảnh</th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>
+
+<script>
+  let stt = 1;
+
+  function resetErrors() {
+    $('#hoTenError, #cmndError, #diaChiError, #emailError, #dienThoaiError, #anhError').text('');
+  }
+
+  function validate() {
+    let isValid = true;
+    const hoTen = $('#hoTen').val().trim();
+    const cmnd = $('#cmnd').val().trim();
+    const diaChi = $('#diaChi').val().trim();
+    const email = $('#email').val().trim();
+    const dienThoai = $('#dienThoai').val().trim();
+    const anh = $('#anh')[0].files[0];
+
+    resetErrors();
+
+    if (!/^([A-Z][a-z]+)(\s[A-Z][a-z]+)*$/.test(hoTen)) {
+      $('#hoTenError').text('Họ tên phải viết hoa đầu từ, không chứa số.');
+      isValid = false;
+    }
+
+    if (!/^\d{9}$/.test(cmnd)) {
+      $('#cmndError').text('CMND phải gồm 9 chữ số.');
+      isValid = false;
+    }
+
+    if (!/^([A-Z][a-z]+)(\s[A-Z][a-z]+)*$/.test(diaChi)) {
+      $('#diaChiError').text('Địa chỉ phải viết hoa đầu từ.');
+      isValid = false;
+    }
+
+    if (!/^[a-zA-Z0-9._%+-]+@iuh\.edu\.vn$/.test(email)) {
+      $('#emailError').text('Email phải theo dạng xxxxxx@iuh.edu.vn');
+      isValid = false;
+    }
+
+    if (!/^0\d{2}-\d{3}-\d{4}$/.test(dienThoai)) {
+      $('#dienThoaiError').text('Số điện thoại sai định dạng 0xx-xxx-xxxx');
+      isValid = false;
+    }
+
+    if (!anh) {
+      $('#anhError').text('Vui lòng chọn ảnh.');
+      isValid = false;
+    }
+
+    return isValid;
+  }
+
+  function themDongVaoBang() {
+    const hoTen = $('#hoTen').val().trim();
+    const cmnd = $('#cmnd').val().trim();
+    const diaChi = $('#diaChi').val().trim();
+    const email = $('#email').val().trim();
+    const dienThoai = $('#dienThoai').val().trim();
+    const anh = $('#anh')[0].files[0];
+    const anhUrl = URL.createObjectURL(anh);
+
+    const row = `
+      <tr>
+        <td>${stt++}</td>
+        <td>${hoTen}</td>
+        <td>${cmnd}</td>
+        <td>${diaChi}</td>
+        <td>${email}</td>
+        <td>${dienThoai}</td>
+        <td><img src="${anhUrl}" width="50" height="50"></td>
+      </tr>`;
+    $('#bangDangKy tbody').append(row);
+  }
+
+  $(document).ready(function () {
+    $('#formDangKy').on('submit', function (e) {
+      e.preventDefault();
+      if (validate()) {
+        themDongVaoBang();
+        $('#dangKyModal').modal('hide');
+        this.reset();
+        resetErrors();
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Document</title>
+        <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="../css/file.css" />
+        <script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+        <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../js/file.js"></script>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="col-md-12">
+                <header>
+                    <img src="../img/HEADER.PNG" />
+                </header>
+            </div>
+            <div class="col-md-12">
+                <nav class="navbar-collapse">
+                    <ul class="navbar-nav nav">
+                        <li><a href="#" id="dn">Đăng nhập</a></li>
+                        <li><a href="#" id="myBtn">Đăng ký</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="col-md-12">
+                <section class="table-responsive">
+                    <table class="table table-striped">
+                        <caption>
+                            <h1>DANH SÁCH ĐĂNG KÝ LÀM CĂN CƯỚC SINH VIÊN</h1>
+                            <h1>TRƯỜNG DHCN THÀNH PHỐ HỒ CHÍ MINH</h1>
+                        </caption>
+                        <thead>
+                            <tr>
+                                <th>STT</th>
+                                <th>Họ tên</th>
+                                <th>SCMND cũ</th>
+                                <th>Quê quán</th>
+                                <th>Email</th>
+                                <th>Điện thoại</th>
+                                <th>Ảnh đại diện</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Nguyễn Công Chính</td>
+                                <td>212692772</td>
+                                <td>BÌNH ĐỊNH</td>
+                                <td>duonghoainam@gmail.com</td>
+                                <td>0990-888-777</td>
+                                <td>Anhmoi</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+            </div>
+            <div class="col-md-12">
+                <footer align="center">SVTH: ------------- - MSSV: ------------- Lớp------------------</footer>
+            </div>
+        </div>
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h1 style="text-align: center">THÔNG TIN CÁ NHÂN</h1>
+                    </div>
+                    <div class="modal-body">
+                        <form role="form" class="form-horizontal" id="registrationForm">
+                            <div class="form-group">
+                                <div id="thongbao" class="text-danger text-center"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="txtHoTen" class="control-label col-xs-3">Họ tên</label>
+                                <div class="col-md-9">
+                                    <input type="text" class="form-control" id="txtHoTen" placeholder="Nhập họ tên" required />
+                                    <span id="tbHoTen" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="txtCMND" class="control-label col-xs-3">SCMND cũ</label>
+                                <div class="col-md-9">
+                                    <input type="text" class="form-control" id="txtCMND" placeholder="Nhập số CMND cũ" required />
+                                    <span id="tbCMND" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="txtQueQuan" class="control-label col-xs-3">Quê quán</label>
+                                <div class="col-md-9">
+                                    <input type="text" class="form-control" id="txtQueQuan" placeholder="Nhập tỉnh của bạn" required />
+                                    <span id="tbQueQuan" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="txtEmail" class="control-label col-xs-3">Email</label>
+                                <div class="col-md-9">
+                                    <input type="email" class="form-control" id="txtEmail" placeholder="Nhập Email của bạn" required />
+                                    <span id="tbEmail" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="txtSDT" class="control-label col-xs-3">Số điện thoại</label>
+                                <div class="col-md-9">
+                                    <input type="text" class="form-control" id="txtSDT" placeholder="xxx-xxx-xxxx" required />
+                                    <span id="tbSDT" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="txtAnh" class="control-label col-xs-3">Ảnh đại diện</label>
+                                <div class="col-md-9">
+                                    <input type="file" class="form-control" id="txtAnh" accept=".jpg, .jpeg, .png" required />
+                                    <span id="tbAnh" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" id="btnSave" class="btn btn-success btn-block">Lưu</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

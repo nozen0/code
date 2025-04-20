@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="23714291-Nguyenhuuthinh-Tuan08" content="Javascript_jQuery_Form_Modal_Styles">
+    <title>Bai1_b</title>
+    <link rel="stylesheet" href="../bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <script src="../bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <style>
+        img{
+            margin-top: 20px;
+            width: 600px;
+            height: 600px;
+        }
+       
+        .row.text-light {
+            background-color: #3b5798;
+        }
+        .row{
+            background-color: #e5e6fb;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row text-light">
+            <div class="col-6">
+                <h1><b>facebook</b></h1>
+            </div>
+            <div class="col-2">
+                <label for="">Email hoặc điện thoại</label>
+                <input type="text">
+                <div class="check">
+                    <input class="form-check-input" type="checkbox" id="check">
+                    <label class="form-check-label" for="check">
+                        Duy trì đăng nhập
+                    </label>
+                </div>
+            </div>
+            <div class="col-2">
+                <label for="">Mật khẩu</label>
+                <input type="text">
+                <a href="" style="color: white;">Quên mật khẩu?</a>
+            </div>
+            <div class="col-2">
+                <button style="margin-top: 20px;  color: white; background-color: #7e90ab;"><b>Đăng nhập</b></button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <img src="../images/fbb.png" style="height: 400px; width: 600px;">
+                <h3 class="fs-4" style="margin-top: 10px; color: #7890b4;">Cảm ơn bạn đã ghé thăm!</h3>
+                <p><b>Chúng tôi mong sớm gặp lại bạn</b></p>
+            </div>
+            <div class="col-6 mt-5">
+                <h1><b>Đăng ký</b></h1>
+                <b>Miễn phí và sẽ luôn như vậy</b>
+                <div class="form">
+                    <div class="row mt-4">
+                        <div class="col-6">
+                            <input type="text" id="Ho" class="form-control" placeholder="Họ">
+                        </div>
+                        <div class="col-6">
+                            <input type="text" id="Ten" class="form-control" placeholder="Tên">
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-12">
+                            <input type="email" class="form-control" id="email" placeholder="Email đăng nhập">
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-12">
+                            <input type="email" class="form-control" id="NhaplaiEmail" placeholder="Nhập lại Email">
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-12">
+                            <input type="password" class="form-control" id="password" placeholder="Mật khẩu">
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-12">
+                            <input type="text" name="" id="Namsinh" class="form-control" placeholder="Năm sinh">
+                        </div>
+                    </div>
+                   <div class="row mt-3">
+                    <div class="col-12"> 
+                        <button type="button" 
+                        onclick="dangkyForm()" class="btn btn-success">Đăng ký</button>
+                    </div>
+                   </div>
+                </div>
+            </div>
+        </div>
+
+       
+        
+    </div>
+    <script>
+        function dangkyForm(){
+            var ho = document.getElementById("Ho").value;
+            var ten = document.getElementById("Ten").value;
+            var email = document.getElementById("email").value;
+            var nhaplaiEmail = document.getElementById("NhaplaiEmail").value;
+            var matkhau  = document.getElementById("password").value;
+            var namsinh = document.getElementById("Namsinh").value;
+
+            if(!ho || !ten || !email || !nhaplaiEmail || !matkhau || !namsinh){
+                alert("vui lòng nhập đầy đủ thông tin!");
+                return; 
+            }
+
+            if(!/^[A-Z]/.test(ho) || !/^[A-Z]/.test(ten)){
+                alert("Họ và tên phải bắt đầu bằng chữ hoa");
+                return;
+            }
+
+            var emailrenght = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if(!emailrenght.test(email)){
+                alert("Định dạng email không hợp lệ");
+                return;
+            }
+
+            if(email !== nhaplaiEmail)
+            {
+                alert("Email không trùng hợp.");
+                return;
+            }
+
+            if(matkhau.length < 6 || !/[a-zA-Z]/.test(matkhau) || !/\d/.test(matkhau)){
+                alert("Mật khẩu phải có ít nhất 6 kí tự và chứa ít nhất 1 số và một kí tự");
+                return;
+            }
+
+            if(parseInt(namsinh) >= 2002){
+                alert("Năm sinh nhỏ hơn 2002");
+                return;
+            }
+            alert("Đăng ký thành công!");
+
+        }
+    </script>
+</body>
+</html>
