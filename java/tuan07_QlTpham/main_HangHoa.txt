@@ -1,0 +1,99 @@
+package tuan07_QlTpham;
+
+import java.util.List;
+import java.util.Scanner;
+
+// Lớp chứa phương thức main để chạy chương trình quản lý hàng hóa
+public class main_HangHoa {
+    public static void main(String[] args) {
+        QuanLyHangHoa quanLy = new QuanLyHangHoa(); // Tạo đối tượng quản lý hàng hóa
+        Scanner scanner = new Scanner(System.in);
+        int choice;
+
+        do {
+            // Hiển thị menu lựa chọn
+            System.out.println("\n--- QUẢN LÝ HÀNG HÓA ---");
+            System.out.println("1. Thêm hàng hóa");
+            System.out.println("2. Hiển thị danh sách hàng hóa");
+            System.out.println("3. Xóa hàng hóa theo mã hàng");
+            System.out.println("4. Sửa đơn giá hàng hóa");
+            System.out.println("5. Hiển thị hàng thực phẩm khó bán");
+            System.out.println("6. Thêm ví dụ mẫu");
+            System.out.println("0. Thoát");
+            System.out.print("Chọn chức năng: ");
+            choice = scanner.nextInt();
+            scanner.nextLine(); // Đọc bỏ dòng trống
+
+            switch (choice) {
+                case 1:
+                    // Nhập thông tin hàng hóa mới
+                    System.out.print("Nhập mã hàng: ");
+                    String maHang = scanner.nextLine();
+                    System.out.print("Nhập tên hàng: ");
+                    String tenHang = scanner.nextLine();
+                    System.out.print("Nhập đơn giá: ");
+                    double donGia = scanner.nextDouble();
+                    System.out.print("Nhập số lượng tồn: ");
+                    int soLuongTon = scanner.nextInt();
+                    scanner.nextLine(); // Đọc bỏ dòng trống
+
+                    HangHoa hangHoa = new HangDienMay(maHang, tenHang, donGia, soLuongTon, 12, 1000); // Đổi tên biến thành hangHoa
+                    quanLy.themHangHoa(hangHoa);
+                    System.out.println("Đã thêm hàng hóa thành công!");
+                    break;
+
+                case 2:
+                    // Lấy danh sách hàng hóa dưới dạng chuỗi
+                    List<String> danhSach = quanLy.hienThiDanhSach();
+                    System.out.println("\nDANH SÁCH HÀNG HÓA:");
+                    // Hiển thị từng item trong danh sách
+                    for (String hangHoaItem : danhSach) { // Đổi tên biến hiển thị thành hangHoaItem
+                        System.out.println(hangHoaItem);
+                    }
+                    break;
+
+                case 3:
+                    System.out.print("Nhập mã hàng cần xóa: ");
+                    String maXoa = scanner.nextLine();
+                    quanLy.xoaHangHoa(maXoa);
+                    System.out.println("Đã xóa hàng hóa!");
+                    break;
+
+                case 4:
+                    System.out.print("Nhập mã hàng cần sửa giá: ");
+                    String maSua = scanner.nextLine();
+                    System.out.print("Nhập đơn giá mới: ");
+                    double giaMoi = scanner.nextDouble();
+                    quanLy.suaDonGia(maSua, giaMoi);
+                    System.out.println("Đã cập nhật giá hàng hóa!");
+                    break;
+
+                case 5:
+                    // Hiển thị các hàng thực phẩm khó bán
+                    List<String> hangThucPhamKhoBan = quanLy.hienThiHangThucPhamKhoBan();
+                    System.out.println("\nHÀNG THỰC PHẨM KHÓ BÁN:");
+                    for (String hang : hangThucPhamKhoBan) {
+                        System.out.println(hang);
+                    }
+                    break;
+
+                case 6:
+                    // Thêm ví dụ cứng về hàng hóa
+                    quanLy.themHangHoa(new HangDienMay("HDM001", "Tủ lạnh", 15000000, 5, 24, 500));
+                    quanLy.themHangHoa(new HangSanhSu("HSS001", "Bình gốm sứ", 500000, 20, "Gốm Bát Tràng", new java.util.Date()));
+                    quanLy.themHangHoa(new HangThucPham("HTP001", "Gạo ST25", 25000, 100, "Công ty A", new java.util.Date(), new java.util.Date(System.currentTimeMillis() + 7L * 24 * 60 * 60 * 1000)));
+                    System.out.println("Đã thêm 3 ví dụ mẫu!");
+                    break;
+
+                case 0:
+                    System.out.println("Thoát chương trình.");
+                    break;
+
+                default:
+                    System.out.println("Lựa chọn không hợp lệ!");
+            }
+        } while (choice != 0);
+
+        
+    }
+}

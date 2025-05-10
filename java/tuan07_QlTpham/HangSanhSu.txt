@@ -1,0 +1,22 @@
+package tuan07_QlTpham;
+
+import java.util.Date;
+
+// Lớp hàng sành sứ kế thừa từ HangHoa
+public class HangSanhSu extends HangHoa {
+    private String nhaSanXuat; // Nhà sản xuất
+    private Date ngaySanXuat; // Ngày sản xuất
+
+    public HangSanhSu(String maHang, String tenHang, double donGia, int soLuongTon, String nhaSanXuat, Date ngaySanXuat) {
+        super(maHang, tenHang, donGia, soLuongTon); // Gọi constructor lớp cha
+        this.nhaSanXuat = nhaSanXuat;
+        this.ngaySanXuat = ngaySanXuat;
+    }
+
+    // Ghi đè phương thức toString() để hiển thị thông tin chi tiết về hàng sành sứ
+    @Override
+    public String toString() {
+        return "Mã hàng: " + maHang + ", Tên hàng: " + tenHang + ", Đơn giá: " + donGia + ", Số lượng tồn: " + soLuongTon +
+                ", Nhà sản xuất: " + nhaSanXuat + ", Ngày sản xuất: " + ngaySanXuat;
+    }
+}

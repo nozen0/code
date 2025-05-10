@@ -1,0 +1,29 @@
+package tuan07_Qlsach;
+
+public abstract class Sach {
+    protected String maSach;
+    protected String ngayNhap;
+    protected double donGia;
+    protected int soLuong;
+    protected String nhaXuatBan;
+
+    public Sach(String maSach, String ngayNhap, double donGia, int soLuong, String nhaXuatBan) {
+        this.maSach = maSach;
+        this.ngayNhap = ngayNhap;
+        this.donGia = donGia;
+        this.soLuong = soLuong;
+        this.nhaXuatBan = nhaXuatBan;
+    }
+
+    public abstract double tinhThanhTien();
+
+    @Override
+    public String toString() {
+        return "Mã Sách: " + maSach + ", Ngày Nhập: " + ngayNhap + ", Đơn Giá: " + donGia + ", Số Lượng: " + soLuong + ", NXB: " + nhaXuatBan;
+    }
+
+	protected String getNhaXuatBan() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+}

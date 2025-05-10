@@ -1,0 +1,58 @@
+package tuan07_Qlsach;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class QuanLySach {
+    private ArrayList<Sach> danhSach;
+
+    public QuanLySach() {
+        danhSach = new ArrayList<>();
+    }
+
+    public void themSach(Sach s) {
+        danhSach.add(s);
+    }
+
+    public double tinhTongThanhTienGiaoKhoa() {
+        double tong = 0;
+        for (Sach s : danhSach) {
+            if (s instanceof SachGiaoKhoa) {
+                tong += s.tinhThanhTien();
+            }
+        }
+        return tong;
+    }
+
+    public double tinhTongThanhTienThamKhao() {
+        double tong = 0;
+        for (Sach s : danhSach) {
+            if (s instanceof SachThamKhao) {
+                tong += s.tinhThanhTien();
+            }
+        }
+        return tong;
+    }
+
+    public List<String> xuatSachGiaoKhoaTheoNXB(String nxb) {
+        List<String> result = new ArrayList<>();
+        for (Sach s : danhSach) {
+            // Kiểm tra nếu sách là sách giáo khoa và nhà xuất bản không phải là null
+            if (s instanceof SachGiaoKhoa && s.getNhaXuatBan() != null && s.getNhaXuatBan().equalsIgnoreCase(nxb)) {
+                result.add(s.toString()); // Thêm thông tin sách vào danh sách kết quả
+            }
+        }
+        return result;
+    }
+
+    public Sach timSachThanhTienCaoNhat() {
+        if (danhSach.isEmpty()) return null;
+        Sach maxSach = danhSach.get(0);
+        for (Sach s : danhSach) {
+            if (s.tinhThanhTien() > maxSach.tinhThanhTien()) {
+                maxSach = s;
+            }
+        }
+        return maxSach;
+    }
+}

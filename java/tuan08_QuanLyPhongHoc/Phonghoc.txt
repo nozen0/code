@@ -1,0 +1,70 @@
+package tuan08_QuanLyPhongHoc;
+
+import java.util.Objects;
+
+// Lớp trừu tượng đại diện cho một phòng học chung
+public abstract class Phonghoc {
+    protected String maPhong;  // Mã phòng học
+    protected String dayNha;   // Dãy nhà
+    protected double dienTich; // Diện tích phòng học
+    protected int soBongDen;   // Số lượng bóng đèn trong phòng
+
+    // Các phương thức getter
+    public String getMaPhong() {
+        return maPhong;
+    }
+
+    public String getDayNha() {
+        return dayNha;
+    }
+
+    public double getDienTich() {
+        return dienTich;
+    }
+
+    public int getSoBongDen() {
+        return soBongDen;
+    }
+
+    // Các phương thức setter
+    public void setMaPhong(String maPhong) {
+        this.maPhong = maPhong;
+    }
+
+    public void setDayNha(String dayNha) {
+        this.dayNha = dayNha;
+    }
+
+    public void setDienTich(double dienTich) {
+        this.dienTich = dienTich;
+    }
+
+    public void setSoBongDen(int soBongDen) {
+        this.soBongDen = soBongDen;
+    }
+
+    // Constructor khởi tạo phòng học
+    public Phonghoc(String maPhong, String dayNha, double dienTich, int soBongDen) {
+        this.maPhong = maPhong;
+        this.dayNha = dayNha;
+        this.dienTich = dienTich;
+        this.soBongDen = soBongDen;
+    }
+
+    // Phương thức hashCode và equals để kiểm tra trùng lặp mã phòng
+    @Override
+    public int hashCode() {
+        return Objects.hash(maPhong);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Phonghoc other = (Phonghoc) obj;
+        return Objects.equals(maPhong, other.maPhong);
+    }
+
+    // Phương thức trừu tượng kiểm tra xem phòng có đạt chuẩn hay không
+    abstract boolean checkDatChuan();
+}
